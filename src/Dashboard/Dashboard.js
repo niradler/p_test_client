@@ -13,14 +13,29 @@ class Dashboard extends Component {
     }
   }
   componentWillMount() {
-    fetchData().then((res) => {
+    if (this.state.data.length ===0) {
+      fetchData().then((res) => {
+        this.setState({
+          fields:getFields(res),
+          data: res
+        },()=>console.log("data",this.state))
+      })
+    }
+
+  }
+apply = (filter)=>{
+  fetchData(filter).then((res) => {
+    this.setState({
+      fields:[],
+      data: []
+    },()=>{
       this.setState({
         fields:getFields(res),
         data: res
-      },()=>console.log("data",this.state))
+      })
     })
-  }
-
+  })
+}
   render() {
     return (
       <div className="Dashboard container">
@@ -28,7 +43,7 @@ class Dashboard extends Component {
           <img src={logo} className="logo" alt="logo" />
         </header> */}
         {this.state.data.length > 0 ?
-        <Filter fields={this.state.fields}/>
+        <Filter fields={this.state.fields} apply={this.apply}/>
         :"Loading..."}
         {this.state.data.length > 0 ?
         <Table 
