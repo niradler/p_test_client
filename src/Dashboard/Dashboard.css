@@ -1,0 +1,13 @@
+.logo {
+  animation: logo-spin infinite 23s linear;
+  height: 52px;
+}
+
+#pagination {
+  max-width: 835px;
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
