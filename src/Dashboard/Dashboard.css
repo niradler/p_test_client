@@ -14,6 +14,9 @@ body {
 .navbar {
   margin-bottom: 20px;
 }
+#table {
+  overflow-x: scroll;
+}
 
 @keyframes logo-spin {
   from { transform: rotate(0deg); }

@@ -146,19 +146,19 @@ reset = ()=>{
           </div>
           </div>
          
-          <div className="columns">
+          <div className="columns is-mobile">
           
-          <div className="column is-1">
+          <div className="column is-1-desktop is-3-mobile ">
           <div className="control ">
           <button className="button is-info" onClick={this.apply}>Apply</button>
          </div>
          </div>
-         <div className="column is-1">
+         <div className="column is-1-desktop is-3-mobile">
           <div className="control ">
           <button className="button is-danger" onClick={this.reset}>Reset</button>
          </div>
          </div>
-         <div className="column is-1">
+         <div className="column is-1-desktop is-3-mobile">
          <div className="control ">
           <button className="button is-warning" onClick={()=>this.setState({show:false})}>Hide</button>
          </div>
