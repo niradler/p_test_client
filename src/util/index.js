@@ -31,4 +31,35 @@ const getFields = (data) => {
     return {ips_options, domains, blacklisted, events_options}
 }
 
-export {fetchData, getFields};
+const getTopIp = (data) => {
+    const ips = [],
+        org_data = [];
+    let max = 0;
+    data = data.filter((e) => e.event_type === 'page_view');
+    data.forEach((e) => {
+        let loc = ips.indexOf(e.ip);
+        if (loc === -1) {
+            ips.push(e.ip)
+            org_data.push({ip: e.ip, page_view: 1})
+        } else {
+            org_data[loc].page_view++;
+            if (org_data[loc].page_view > max) 
+                max = org_data[loc].page_view;
+        }
+    })
+
+    const top10 = []
+        let c_max = max - 1,
+            i = 0;
+        while (top10.length < 10) {
+            if (org_data[i].page_view > c_max) 
+                top10.push(org_data[i]);
+            i++;
+            
+            if (i === org_data.length) 
+                i = 0;
+                c_max--;
+            }
+        return top10;
+    }
+    export {fetchData, getFields, getTopIp};

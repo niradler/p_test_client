@@ -11,11 +11,7 @@ class Header extends Component {
                             alt="Bulma: a modern CSS framework based on Flexbox"
                             width="112"
                             height="28" /></a>
-                        {/* <div className="navbar-burger burger" data-target="navbarExampleTransparentExample">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div> */}
+
                     </div>
 
                     <div id="navbarExampleTransparentExample" className="navbar-menu">
@@ -26,7 +22,9 @@ class Header extends Component {
                             <div className="navbar-end">
                                 <div className="navbar-item">
                                     <div className="field is-grouped">
-                                 
+                                    <button className="button is-link is-outlined is-fullwidth" onClick={()=>this.props.showTop10()}>
+                                         { !this.props.showTop10Status ? "Show Top 10 IPs": "Hide Top 10 IPs"}
+                                        </button>
 
                                     </div>
                                 </div>
