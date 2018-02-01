@@ -1,6 +1,7 @@
 import axios from 'axios'
 const data_src = "https://storage.googleapis.com/pxtask-eng/dummy_data.json";
 
+//fetch data from server
 const fetchData = async(filter) => {
     try {
         const res = await axios.post('https://perimeterx.herokuapp.com/data/fetch', {
@@ -12,7 +13,7 @@ const fetchData = async(filter) => {
         return error;
     }
 }
-
+//return arrays of field option
 const getFields = (data) => {
     const ips_options = [],
         domains = [],
@@ -30,7 +31,7 @@ const getFields = (data) => {
     });
     return {ips_options, domains, blacklisted, events_options}
 }
-
+//return top 10 ip and page views for chart
 const getTopIp = (data) => {
     const ips = [],
         org_data = [];

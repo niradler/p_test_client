@@ -8,6 +8,9 @@ import Summary from '../components/Summary/Summary'
 import Prediction from '../components/Prediction/Prediction'
 import './Dashboard.css';
 
+/*
+Main page component
+*/
 class Dashboard extends Component {
   constructor() {
     super();
@@ -17,6 +20,7 @@ class Dashboard extends Component {
     }
   }
   componentWillMount() {
+    //fetch data without filter
     if (this.state.data.length === 0) {
       fetchData().then((res) => {
         this.setState({
@@ -27,9 +31,11 @@ class Dashboard extends Component {
     }
 
   }
+  //show top 10 chart
   showTop10 = () =>{
     this.setState({showTop10:!this.state.showTop10})
   }
+    //apply filter
   apply = (filter) => {
     fetchData(filter).then((res) => {
       this.setState({
