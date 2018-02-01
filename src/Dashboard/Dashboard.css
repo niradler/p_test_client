@@ -1,10 +1,18 @@
 .logo {
-  animation: logo-spin infinite 23s linear;
-  height: 52px;
+  animation: logo-spin infinite 10s linear;
+  height: 62px;
 }
 
-#pagination {
+body {
+  background-color: #fafafa;
+}
+
+.container {
   max-width: 835px;
+}
+
+.navbar {
+  margin-bottom: 20px;
 }
 
 @keyframes logo-spin {
