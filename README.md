@@ -2,5 +2,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Simple dashboard
 
+[Demo](https://niradler.github.io/p_test_client/)
 
 
